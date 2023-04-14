@@ -1,7 +1,7 @@
 from googleapiclient.discovery import build
 
 def search_video(query):
-    youtube = build("youtube", "v3", developerKey="AIzaSyBKjA3O0WWkwCOFHCfCHkBZzIh2mY9JGb8")
+    youtube = build("youtube", "v3", developerKey="youtube APIKEY")
 
     request = youtube.search().list(
         part="id",
