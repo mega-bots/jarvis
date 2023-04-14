@@ -17,7 +17,7 @@ def func(ask):
     else:
         fname,ext = s,''
         extra = 'start '
-    direc = 'cd C:/users/Mohit/'
+    direc = 'cd /'
     lis = (os.popen(f'{direc} && dir /s /b {fname}?.{ext}').read())
     mainlis = lis.split("\n")
     test = extra+mainlis[0].replace("\\","/")

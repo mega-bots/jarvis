@@ -108,12 +108,13 @@ wish_me()
 
 def execute_the_command_said_by_user():
     query = take_command().lower()
+    print("Query:",query)
     # logic for executing basic tasks
     if "date" in query:
         print_and_speak(f"{datetime.datetime.now():%A, %B %d, %Y}")
     elif "time" in query:
         print_and_speak(f"{datetime.datetime.now():%I %M %p}")
-    elif "open" in query.lower():
+    elif "open" in query:
         speak("Is it an app or website")
         text = take_command().lower()
         if 'app' in text:
@@ -166,7 +167,7 @@ def execute_the_command_said_by_user():
         speak("Is it File or Folder")
         speak("Playing your request")
     else:
-        speak(gpt.open(query))
+        speak(gpt.open("ask a clarification question for this sentence "+query))
 def exe():
     query = gui.store_value()
     # logic for executing basic tasks
@@ -222,7 +223,7 @@ def exe():
     elif "bye" in query:
         speak("Bye Sir, have a good day.")
         sys.exit()
-    else:
+    elif query.strip() != '':
         speak(gpt.open(query))
 gui.set_speak_command(execute_the_command_said_by_user)
 gui.set_btn(exe)
