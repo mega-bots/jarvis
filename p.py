@@ -1,7 +1,7 @@
 import os
 import openai
 from actions import speak
-openai.api_key = "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"
+openai.api_key = #UR chatGPT APIkey
 def play(ask):
     #ask =input("Questions: ")
     response = openai.Completion.create(
