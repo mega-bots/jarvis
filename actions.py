@@ -4,6 +4,7 @@ import webbrowser
 
 import pyttsx3
 import requests
+import fuck
 
 def search_engine_selector(config):
     if config['DEFAULT']['search_engine'] == 'Google':
